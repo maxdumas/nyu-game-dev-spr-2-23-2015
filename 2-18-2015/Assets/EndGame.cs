@@ -26,7 +26,7 @@ public class EndGame : MonoBehaviour {
 
 	IEnumerator MoveCandlesUp() {
 		while(Candles.transform.position.y < TargetY) {
-			MainLight.intensity = Mathf.SmoothStep(MainLight.intensity, 0f, 0.125f);
+			MainLight.intensity = Mathf.SmoothStep(MainLight.intensity, 0.25f, 0.05f);
 			Camera.main.backgroundColor = Color.Lerp(Camera.main.backgroundColor, TargetBGColor, 0.125f);
 			Candles.transform.position += Vector3.up * Time.deltaTime;
 			yield return new WaitForEndOfFrame();
